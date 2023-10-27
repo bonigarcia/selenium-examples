@@ -24,7 +24,6 @@ import java.util.logging.Logger;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -44,7 +43,6 @@ class EdgeLoggingTest {
         driver = new EdgeDriver();
     }
 
-    @Disabled("Due a bug in Edge Linux")
     @Test
     void test() {
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");

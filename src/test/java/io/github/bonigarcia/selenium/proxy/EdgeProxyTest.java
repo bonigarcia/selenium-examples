@@ -20,7 +20,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
@@ -41,7 +40,6 @@ class EdgeProxyTest {
         driver = new EdgeDriver(options);
     }
 
-    @Disabled("Proxy not available in CI")
     @Test
     void test() {
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
