@@ -23,27 +23,22 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-class ChromeTest {
+class FirefoxWdmTest {
 
     WebDriver driver;
 
     @BeforeAll
     static void setupClass() {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
     }
 
     @BeforeEach
     void setup() {
-        driver = new ChromeDriver();
-    }
-
-    @AfterEach
-    void teardown() {
-        driver.quit();
+        driver = new FirefoxDriver();
     }
 
     @Test
@@ -53,4 +48,8 @@ class ChromeTest {
         assertThat(title).contains("Selenium WebDriver");
     }
 
+    @AfterEach
+    void teardown() {
+        driver.quit();
+    }
 }

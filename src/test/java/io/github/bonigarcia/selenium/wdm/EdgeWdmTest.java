@@ -21,31 +21,28 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-class FirefoxTest {
+class EdgeWdmTest {
 
     WebDriver driver;
 
     @BeforeAll
     static void setupClass() {
-        WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.edgedriver().setup();
     }
 
     @BeforeEach
     void setup() {
-        driver = new FirefoxDriver();
+        driver = new EdgeDriver();
     }
 
-    @AfterEach
-    void teardown() {
-        driver.quit();
-    }
-
+    @Disabled("Due a bug in Edge Linux")
     @Test
     void test() {
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
@@ -53,4 +50,8 @@ class FirefoxTest {
         assertThat(title).contains("Selenium WebDriver");
     }
 
+    @AfterEach
+    void teardown() {
+        driver.quit();
+    }
 }
