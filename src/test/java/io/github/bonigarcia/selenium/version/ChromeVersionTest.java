@@ -33,7 +33,7 @@ class ChromeVersionTest {
     void setup() {
         // https://www.selenium.dev/documentation/webdriver/drivers/options/#browserversion
         ChromeOptions options = new ChromeOptions();
-        options.setBrowserVersion("dev");
+        options.setBrowserVersion("118");
         driver = new ChromeDriver(options);
     }
 
