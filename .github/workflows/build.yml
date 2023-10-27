@@ -29,7 +29,7 @@ jobs:
       run: Xvfb $DISPLAY &
     - name: Run tests on Linux
       if: matrix.os == 'ubuntu-latest'
-      run: "mvn -B test -Dtest=!*Manual*,!*Proxy*,!Edge*"
+      run: mvn -B test -Dtest=!*Manual*,!*Proxy*,!Edge*
     - name: Run tests on Windows and macOS
       if: matrix.os != 'ubuntu-latest'
-      run: mvn -B test -Dtest=!*Manual*,!*Proxy*
+      run: "mvn -B test -Dtest=!*Manual*,!*Proxy*"
