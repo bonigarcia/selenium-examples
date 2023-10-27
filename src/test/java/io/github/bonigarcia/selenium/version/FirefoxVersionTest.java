@@ -32,7 +32,7 @@ class FirefoxVersionTest {
     @BeforeEach
     void setup() {
         FirefoxOptions options = new FirefoxOptions();
-        options.setBrowserVersion("beta");
+        options.setBrowserVersion("nightly");
         driver = new FirefoxDriver(options);
     }
 

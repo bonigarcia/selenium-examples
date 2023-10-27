@@ -32,7 +32,7 @@ class EdgeVersionTest {
     @BeforeEach
     void setup() {
         EdgeOptions options = new EdgeOptions();
-        options.setBrowserVersion("beta");
+        options.setBrowserVersion("stable");
         driver = new EdgeDriver(options);
     }
 
