@@ -32,6 +32,7 @@ class EdgeProxyTest {
 
     @BeforeEach
     void setup() {
+        // https://www.selenium.dev/documentation/webdriver/drivers/options/#proxy
         Proxy proxy = new Proxy();
         proxy.setHttpProxy("localhost:8080");
         EdgeOptions options = new EdgeOptions();

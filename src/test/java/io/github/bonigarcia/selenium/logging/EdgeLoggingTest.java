@@ -35,6 +35,7 @@ class EdgeLoggingTest {
 
     @BeforeEach
     void setup() {
+        // https://www.selenium.dev/documentation/webdriver/troubleshooting/logging/
         Arrays.stream(Logger.getLogger("").getHandlers()).forEach(handler -> {
             handler.setLevel(Level.FINE);
         });

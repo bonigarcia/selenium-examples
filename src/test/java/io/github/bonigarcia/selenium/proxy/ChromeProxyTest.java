@@ -32,6 +32,7 @@ class ChromeProxyTest {
 
     @BeforeEach
     void setup() {
+        // https://www.selenium.dev/documentation/webdriver/drivers/options/#proxy
         Proxy proxy = new Proxy();
         proxy.setHttpProxy("localhost:8080");
         ChromeOptions options = new ChromeOptions();

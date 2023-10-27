@@ -31,6 +31,7 @@ class ChromeVersionTest {
 
     @BeforeEach
     void setup() {
+        // https://www.selenium.dev/documentation/webdriver/drivers/options/#browserversion
         ChromeOptions options = new ChromeOptions();
         options.setBrowserVersion("beta");
         driver = new ChromeDriver(options);

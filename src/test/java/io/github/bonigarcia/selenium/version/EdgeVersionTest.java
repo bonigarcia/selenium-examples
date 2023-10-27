@@ -31,6 +31,7 @@ class EdgeVersionTest {
 
     @BeforeEach
     void setup() {
+        // https://www.selenium.dev/documentation/webdriver/drivers/options/#browserversion
         EdgeOptions options = new EdgeOptions();
         options.setBrowserVersion("stable");
         driver = new EdgeDriver(options);

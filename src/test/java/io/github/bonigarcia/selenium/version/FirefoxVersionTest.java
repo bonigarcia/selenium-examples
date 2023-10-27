@@ -31,6 +31,7 @@ class FirefoxVersionTest {
 
     @BeforeEach
     void setup() {
+        // https://www.selenium.dev/documentation/webdriver/drivers/options/#browserversion
         FirefoxOptions options = new FirefoxOptions();
         options.setBrowserVersion("nightly");
         driver = new FirefoxDriver(options);
