@@ -30,7 +30,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.manager.SeleniumManager;
 
-class EdgeBasicTest {
+class EdgeLoggingTest {
 
     WebDriver driver;
 

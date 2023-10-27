@@ -29,7 +29,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.manager.SeleniumManager;
 
-class ChromeBasicTest {
+class ChromeLoggingTest {
 
     WebDriver driver;
 
