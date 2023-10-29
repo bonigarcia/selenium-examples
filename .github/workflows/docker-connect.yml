@@ -14,3 +14,4 @@ jobs:
         docker run -d --cap-add=SYS_ADMIN -p 4444:4444 selenoid/vnc:chrome_117.0
         ./scripts/wait-for-it.sh --timeout=60 localhost:4444
         wget -O - http://localhost:4444/status
+        curl -X POST http://localhost:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
