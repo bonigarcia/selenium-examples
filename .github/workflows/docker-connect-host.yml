@@ -9,9 +9,15 @@ jobs:
     steps:
     - name: Checkout GitHub repo
       uses: actions/checkout@v4
-    - name: Start container and wait for it
+    - name: Start container (using host network)
       run: |
         docker run -d --cap-add=SYS_ADMIN --network=host selenoid/vnc:chrome_117.0
+    - name: Wait for container
+      run: |
         ./scripts/wait-for-it.sh --timeout=60 localhost:4444
+    - name: Get status
+      run: |
         wget -O - http://localhost:4444/status
+    - name: Create session
+      run: |
         curl -X POST http://localhost:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
