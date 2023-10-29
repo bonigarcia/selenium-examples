@@ -1,0 +1,16 @@
+name: docker-connect
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout GitHub repo
+      uses: actions/checkout@v4
+    - name: Start container and wait for it
+      run: |
+        docker run -d --cap-add=SYS_ADMIN -p 4444:4444 selenoid/vnc:chrome_117.0
+        ./scripts/wait-for-it.sh --timeout=60 localhost:4444
+        wget -O - http://localhost:4444/status
