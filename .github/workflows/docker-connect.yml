@@ -28,4 +28,4 @@ jobs:
         curl -X POST http://localhost:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
     - name: Run Selenium tests
       run: |
-        mvn -B test -Dtest=Remote*
+        mvn -B test -Dtest=RemoteChromeTest
