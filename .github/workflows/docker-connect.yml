@@ -9,6 +9,11 @@ jobs:
     steps:
     - name: Checkout GitHub repo
       uses: actions/checkout@v4
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: 11
     - name: Start container (using port mapping)
       run: |
         docker run -d --cap-add=SYS_ADMIN -p 4444:4444 selenoid/vnc:chrome_117.0
@@ -21,3 +26,6 @@ jobs:
     - name: Create session
       run: |
         curl -X POST http://localhost:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
+    - name: Run Selenium tests
+      run: |
+        mvn -B test -Dtest=Remote*
