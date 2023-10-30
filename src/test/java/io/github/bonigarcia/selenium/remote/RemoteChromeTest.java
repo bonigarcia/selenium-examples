@@ -47,7 +47,9 @@ class RemoteChromeTest {
 
     @AfterEach
     void teardown() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
 }
