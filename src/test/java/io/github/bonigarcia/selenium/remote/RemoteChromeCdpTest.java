@@ -84,9 +84,6 @@ class RemoteChromeCdpTest {
 
     @AfterEach
     void teardown() {
-        if (devTools != null) {
-            devTools.close();
-        }
         if (driver != null) {
             driver.quit();
         }
