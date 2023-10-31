@@ -20,6 +20,6 @@ jobs:
     - name: Wait for container
       run: |
         ./scripts/wait-for-it.sh --timeout=60 localhost:4444
-    - name: Run Selenium tests
+    - name: Run Selenium test
       run: |
         mvn -B test -Dtest=RemoteChromeCdpTest

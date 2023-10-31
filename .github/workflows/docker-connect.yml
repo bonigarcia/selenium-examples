@@ -26,6 +26,6 @@ jobs:
     - name: Create session
       run: |
         curl -X POST http://localhost:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
-    - name: Run Selenium tests
+    - name: Run Selenium test
       run: |
         mvn -B test -Dtest=RemoteChromeTest
