@@ -30,7 +30,6 @@ jobs:
         mvn -B test -Dtest=Docker*
         Xvfb $DISPLAY &
         mvn -B test -Dtest=!Docker*,!Remote*,!*Manual*,!*Proxy*,!Edge*
-        mvn -B test -Dtest=!Remote*,!*Manual*,!*Proxy*,!Edge*
     - name: Run tests on macOS
       if: matrix.os == 'macos-latest'
       run: |
