@@ -14,6 +14,6 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: 11
-    - name: Run Selenium test
+    - name: Run Selenium tests
       run: |
-        mvn -B test -Dtest=DockerChromeCdpTest
+        mvn -B test -Dtest=Docker*
