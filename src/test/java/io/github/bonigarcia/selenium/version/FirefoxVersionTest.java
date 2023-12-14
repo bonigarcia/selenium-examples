@@ -33,7 +33,7 @@ class FirefoxVersionTest {
     void setup() {
         // https://www.selenium.dev/documentation/webdriver/drivers/options/#browserversion
         FirefoxOptions options = new FirefoxOptions();
-        options.setBrowserVersion("beta");
+        options.setBrowserVersion("91");
         driver = new FirefoxDriver(options);
     }
 
