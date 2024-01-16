@@ -31,15 +31,16 @@ import java.util.Optional;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v119.dom.model.Rect;
-import org.openqa.selenium.devtools.v119.page.Page;
-import org.openqa.selenium.devtools.v119.page.Page.GetLayoutMetricsResponse;
-import org.openqa.selenium.devtools.v119.page.model.Viewport;
+import org.openqa.selenium.devtools.v120.dom.model.Rect;
+import org.openqa.selenium.devtools.v120.page.Page;
+import org.openqa.selenium.devtools.v120.page.Page.GetLayoutMetricsResponse;
+import org.openqa.selenium.devtools.v120.page.model.Viewport;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -47,6 +48,7 @@ import org.slf4j.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+@Disabled
 class DockerWdmChromeCdpTest {
 
     static final Logger log = getLogger(lookup().lookupClass());

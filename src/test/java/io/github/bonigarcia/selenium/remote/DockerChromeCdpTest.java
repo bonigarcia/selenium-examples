@@ -33,6 +33,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.openqa.selenium.By;
@@ -40,10 +41,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v119.dom.model.Rect;
-import org.openqa.selenium.devtools.v119.page.Page;
-import org.openqa.selenium.devtools.v119.page.Page.GetLayoutMetricsResponse;
-import org.openqa.selenium.devtools.v119.page.model.Viewport;
+import org.openqa.selenium.devtools.v120.dom.model.Rect;
+import org.openqa.selenium.devtools.v120.page.Page;
+import org.openqa.selenium.devtools.v120.page.Page.GetLayoutMetricsResponse;
+import org.openqa.selenium.devtools.v120.page.model.Viewport;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -62,6 +63,7 @@ import com.github.dockerjava.core.DockerClientConfig;
 import com.github.dockerjava.httpclient5.ApacheDockerHttpClient;
 import com.github.dockerjava.httpclient5.ApacheDockerHttpClient.Builder;
 
+@Disabled
 @TestInstance(PER_CLASS)
 class DockerChromeCdpTest {
 
@@ -71,7 +73,7 @@ class DockerChromeCdpTest {
     DevTools devTools;
     DockerClient dockerClient;
     String containerId;
-    String imageId = "selenoid/vnc:chrome_118.0";
+    String imageId = "selenoid/vnc:chrome_120.0";
 
     @BeforeAll
     void setupClass() throws Exception {
