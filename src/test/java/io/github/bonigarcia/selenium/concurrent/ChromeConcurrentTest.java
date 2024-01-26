@@ -29,7 +29,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 class ChromeConcurrentTest {
 
-    static final int NUM_BROWSERS = 5;
+    static final int NUM_BROWSERS = 10;
 
     @Test
     void test() throws InterruptedException {
