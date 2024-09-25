@@ -3,10 +3,10 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/boni_gg.svg?style=social)](https://twitter.com/boni_gg)
 
 # Selenium Examples
-This repository contains basic Selenium tests using Java as binding language.
+This repository contains basic [Selenium] tests using Java as binding language.
 
 ## Selenium Manager
-These examples have been designed to illustrate the features shipped with [Selenium Manager].
+These examples have been designed to illustrate the features shipped with [Selenium Manager] and [WebDriver Bidi].
 
 ## About
 selenium-examples (Copyright &copy; 2023-2024) is a project created by [Boni García], licensed under [Apache 2.0 License].
@@ -15,3 +15,4 @@ selenium-examples (Copyright &copy; 2023-2024) is a project created by [Boni Gar
 [Boni García]: https://bonigarcia.dev/
 [Selenium]: https://www.selenium.dev/
 [Selenium Manager]: https://www.selenium.dev/documentation/selenium_manager/
+[WebDriver Bidi]: https://www.selenium.dev/documentation/webdriver/bidi/
