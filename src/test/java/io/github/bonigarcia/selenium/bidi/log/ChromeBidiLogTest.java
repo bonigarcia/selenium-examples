@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.selenium.bidi;
+package io.github.bonigarcia.selenium.bidi.log;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-class ChromeBidiTest {
+class ChromeBidiLogTest {
 
     WebDriver driver;
 
@@ -56,7 +56,7 @@ class ChromeBidiTest {
                 "https://bonigarcia.dev/selenium-webdriver-java/console-logs.html");
 
         new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(_d -> !logs.isEmpty());
+                .until(_d -> logs.size() > 3);
 
         for (GenericLogEntry log : logs) {
             System.out.println(log.getText());

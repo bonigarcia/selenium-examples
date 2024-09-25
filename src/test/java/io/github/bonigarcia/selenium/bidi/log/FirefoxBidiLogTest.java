@@ -14,10 +14,8 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia.selenium.bidi;
+package io.github.bonigarcia.selenium.bidi.log;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,22 +26,19 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.bidi.log.GenericLogEntry;
 import org.openqa.selenium.bidi.module.LogInspector;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.Augmenter;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-class RemoteBidiTest {
+class FirefoxBidiLogTest {
 
     WebDriver driver;
 
     @BeforeEach
-    void setup() throws MalformedURLException {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-search-engine-choice-screen");
+    void setup() {
+        FirefoxOptions options = new FirefoxOptions();
         options.enableBiDi();
-        driver = new Augmenter().augment(
-                new RemoteWebDriver(new URL("http://localhost:4444"), options));
+        driver = new FirefoxDriver(options);
     }
 
     @Test
@@ -59,7 +54,7 @@ class RemoteBidiTest {
                 "https://bonigarcia.dev/selenium-webdriver-java/console-logs.html");
 
         new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(_d -> !logs.isEmpty());
+                .until(_d -> logs.size() > 3);
 
         for (GenericLogEntry log : logs) {
             System.out.println(log.getText());
