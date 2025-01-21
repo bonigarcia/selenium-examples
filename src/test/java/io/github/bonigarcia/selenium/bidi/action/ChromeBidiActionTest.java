@@ -55,10 +55,10 @@ class ChromeBidiActionTest {
         Actions sendKeys = actions.sendKeys(inputText, textValue);
         input.perform(driver.getWindowHandle(), sendKeys.getSequences());
 
-        assertThat(inputText.getDomAttribute("value")).isEqualTo(textValue);
+        assertThat(inputText.getDomProperty("value")).isEqualTo(textValue);
 
         inputText.clear();
-        assertThat(inputText.getDomAttribute("value")).isEmpty();
+        assertThat(inputText.getDomProperty("value")).isEmpty();
     }
 
     @AfterEach
