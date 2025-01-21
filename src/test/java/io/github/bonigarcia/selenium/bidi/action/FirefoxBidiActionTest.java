@@ -53,10 +53,10 @@ class FirefoxBidiActionTest {
         Actions sendKeys = actions.sendKeys(inputText, textValue);
         input.perform(driver.getWindowHandle(), sendKeys.getSequences());
 
-        assertThat(inputText.getAttribute("value")).isEqualTo(textValue);
+        assertThat(inputText.getDomAttribute("value")).isEqualTo(textValue);
 
         inputText.clear();
-        assertThat(inputText.getAttribute("value")).isEmpty();
+        assertThat(inputText.getDomAttribute("value")).isEmpty();
     }
 
     @AfterEach
