@@ -40,7 +40,6 @@ class RemoteBidiLogTest {
     @BeforeEach
     void setup() throws MalformedURLException {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-search-engine-choice-screen");
         options.enableBiDi();
         driver = new Augmenter().augment(
                 new RemoteWebDriver(new URL("http://localhost:4444"), options));

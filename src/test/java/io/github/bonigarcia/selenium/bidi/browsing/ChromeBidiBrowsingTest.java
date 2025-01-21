@@ -39,7 +39,6 @@ class ChromeBidiBrowsingTest {
     @BeforeEach
     void setup() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-search-engine-choice-screen");
         options.enableBiDi();
         driver = new ChromeDriver(options);
 
