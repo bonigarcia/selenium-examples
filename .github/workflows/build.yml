@@ -59,10 +59,3 @@ jobs:
         command: |
           mvn test -Dtest=!Remote*,!Docker*,!*Manual*,!*Proxy*
         shell: cmd
-    - name: Store XML output (in Linux)
-      if: always() && matrix.os == 'ubuntu-latest'
-      uses: actions/upload-artifact@v4.6.1
-      with:
-        name: xml-files
-        path: |
-          firefox-version-test.xml
