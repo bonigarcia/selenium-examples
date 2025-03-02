@@ -42,12 +42,15 @@
             <version>5.9.3</version>
             <scope>test</scope>
         </dependency>
+        <!-- Dependency exclude due to an incompatibility with Selenium logging -->
+        <!--
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.5.17</version>
             <scope>test</scope>
         </dependency>
+        -->
     </dependencies>
 
     <build>

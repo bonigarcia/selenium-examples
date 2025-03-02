@@ -17,10 +17,8 @@
 package io.github.bonigarcia.selenium.remote;
 
 import static io.github.bonigarcia.wdm.WebDriverManager.isDockerAvailable;
-import static java.lang.invoke.MethodHandles.lookup;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
-import static org.slf4j.LoggerFactory.getLogger;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -44,14 +42,11 @@ import org.openqa.selenium.devtools.v132.page.model.Viewport;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.slf4j.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 @Disabled
 class DockerWdmChromeCdpTest {
-
-    static final Logger log = getLogger(lookup().lookupClass());
 
     WebDriver driver;
     DevTools devTools;

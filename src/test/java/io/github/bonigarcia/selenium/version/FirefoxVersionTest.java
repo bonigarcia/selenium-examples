@@ -28,6 +28,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.manager.SeleniumManager;
 
 class FirefoxVersionTest {
 
@@ -35,10 +36,12 @@ class FirefoxVersionTest {
 
     @BeforeEach
     void setup() {
+        // https://www.selenium.dev/documentation/webdriver/drivers/options/#browserversion
         Arrays.stream(Logger.getLogger("").getHandlers()).forEach(handler -> {
             handler.setLevel(Level.FINE);
         });
-        // https://www.selenium.dev/documentation/webdriver/drivers/options/#browserversion
+        Logger.getLogger(SeleniumManager.class.getName()).setLevel(Level.FINE);
+
         FirefoxOptions options = new FirefoxOptions();
         options.setBrowserVersion("beta");
         driver = new FirefoxDriver(options);
