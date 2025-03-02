@@ -43,7 +43,7 @@ class FirefoxVersionTest {
 
         // https://www.selenium.dev/documentation/webdriver/drivers/options/#browserversion
         FirefoxOptions options = new FirefoxOptions();
-        options.setBrowserVersion("132");
+        options.setBrowserVersion("stable");
         driver = new FirefoxDriver(options);
     }
 
