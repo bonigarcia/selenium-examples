@@ -11,7 +11,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ ubuntu-latest, windows-latest, macos-13 ]
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
         java: [ 17 ]
     runs-on: ${{ matrix.os }}
     env:
@@ -20,18 +20,26 @@ jobs:
     - name: Checkout GitHub repo
       uses: actions/checkout@v4
     - name: Set up Java
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4.7.0
       with:
         distribution: 'temurin'
         java-version: ${{ matrix.java }}
+        cache: 'maven'
     - name: Run tests on Linux
       if: matrix.os == 'ubuntu-latest'
       run: |
         mvn -B test -Dtest=Docker*
         Xvfb $DISPLAY &
         mvn -B test -Dtest=!Docker*,!Remote*,!*Manual*,!*Proxy*,!Edge*
+    - name: Install browsers in Mac
+      if: matrix.os == 'macos-latest'
+      run: |
+        brew install --cask firefox
+        /Applications/Firefox.app/Contents/MacOS/firefox --version
+        brew install --cask microsoft-edge
+        "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge" -version
     - name: Run tests on macOS
-      if: matrix.os == 'macos-13'
+      if: matrix.os == 'macos-latest'
       run: |
         mvn -B test -Dtest=!Remote*,!Docker*,!*Manual*,!*Proxy*
     - name: Run tests on Windows
