@@ -18,12 +18,17 @@ package io.github.bonigarcia.selenium.version;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.manager.SeleniumManager;
 
 class ChromeVersionTest {
 
@@ -31,6 +36,11 @@ class ChromeVersionTest {
 
     @BeforeEach
     void setup() {
+        Arrays.stream(Logger.getLogger("").getHandlers()).forEach(handler -> {
+            handler.setLevel(Level.FINE);
+        });
+        Logger.getLogger(SeleniumManager.class.getName()).setLevel(Level.FINE);
+
         // https://www.selenium.dev/documentation/webdriver/drivers/options/#browserversion
         ChromeOptions options = new ChromeOptions();
         options.setBrowserVersion("beta");
