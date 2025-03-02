@@ -30,11 +30,11 @@ jobs:
       uses: nick-invision/retry@v3.0.2
       with:
         timeout_minutes: 30
-        max_attempts: 3
+        max_attempts: 1
         command: |
-          mvn -B test -Dtest=Docker*
+          mvn test -Dtest=Docker*
           Xvfb $DISPLAY &
-          mvn -B test -Dtest=!Docker*,!Remote*,!*Manual*,!*Proxy*,!Edge*
+          mvn test -Dtest=!Docker*,!Remote*,!*Manual*,!*Proxy*,!Edge*
     - name: Install browsers in Mac
       if: matrix.os == 'macos-latest'
       run: |
@@ -47,15 +47,15 @@ jobs:
       uses: nick-invision/retry@v3.0.2
       with:
         timeout_minutes: 30
-        max_attempts: 3
+        max_attempts: 1
         command: |
-          mvn -B test -Dtest=!Remote*,!Docker*,!*Manual*,!*Proxy*
+          mvn test -Dtest=!Remote*,!Docker*,!*Manual*,!*Proxy*
     - name: Run tests on Windows
       if: matrix.os == 'windows-latest'
       uses: nick-invision/retry@v3.0.2
       with:
         timeout_minutes: 30
-        max_attempts: 3
+        max_attempts: 1
         command: |
-          mvn -B test -Dtest=!Remote*,!Docker*,!*Manual*,!*Proxy*
+          mvn test -Dtest=!Remote*,!Docker*,!*Manual*,!*Proxy*
         shell: cmd
