@@ -58,4 +58,4 @@ jobs:
         max_attempts: 3
         command: |
           mvn -B test -Dtest=!Remote*,!Docker*,!*Manual*,!*Proxy*
-      shell: cmd
+        shell: cmd
