@@ -36,14 +36,14 @@ class FirefoxVersionTest {
 
     @BeforeEach
     void setup() {
-        // https://www.selenium.dev/documentation/webdriver/drivers/options/#browserversion
         Arrays.stream(Logger.getLogger("").getHandlers()).forEach(handler -> {
             handler.setLevel(Level.FINE);
         });
         Logger.getLogger(SeleniumManager.class.getName()).setLevel(Level.FINE);
 
+        // https://www.selenium.dev/documentation/webdriver/drivers/options/#browserversion
         FirefoxOptions options = new FirefoxOptions();
-        options.setBrowserVersion("beta");
+        options.setBrowserVersion("132");
         driver = new FirefoxDriver(options);
     }
 
