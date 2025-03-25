@@ -36,10 +36,13 @@ class EdgeVersionTest {
 
     @BeforeEach
     void setup() {
-        Arrays.stream(Logger.getLogger("").getHandlers()).forEach(handler -> {
+        // https://www.selenium.dev/documentation/webdriver/troubleshooting/logging/
+        Logger rootLogger = Logger.getLogger("");
+        Arrays.stream(rootLogger.getHandlers()).forEach(handler -> {
             handler.setLevel(Level.FINE);
         });
-        Logger.getLogger(SeleniumManager.class.getName()).setLevel(Level.FINE);
+        Logger smLogger = Logger.getLogger(SeleniumManager.class.getName());
+        smLogger.setLevel(Level.FINE);
 
         // https://www.selenium.dev/documentation/webdriver/drivers/options/#browserversion
         EdgeOptions options = new EdgeOptions();
