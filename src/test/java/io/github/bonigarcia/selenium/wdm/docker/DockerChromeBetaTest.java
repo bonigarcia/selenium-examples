@@ -34,7 +34,7 @@ class DockerChromeBetaTest {
     void setupTest() {
         wdm = WebDriverManager.chromedriver().browserInDocker()
                 .browserVersion("beta");
-        driver = wdm.dockerDefaultArgs("--disable-gpu,--no-sandbox").create();
+        driver = wdm.create();
     }
 
     @Test
