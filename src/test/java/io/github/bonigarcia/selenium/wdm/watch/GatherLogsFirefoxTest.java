@@ -40,7 +40,7 @@ class GatherLogsFirefoxTest {
 
     @BeforeEach
     void setup() {
-        wdm = WebDriverManager.chromedriver().watch();
+        wdm = WebDriverManager.firefoxdriver().watch();
         driver = wdm.create();
     }
 
