@@ -16,11 +16,12 @@
  */
 package io.github.bonigarcia.selenium.wdm.watch;
 
-import static org.assertj.core.api.Assertions.fail;
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.slf4j.LoggerFactory.getLogger;
 
-import java.io.File;
+import java.nio.file.Path;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,33 +30,34 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 class RecordEdgeTest {
 
-    static final int REC_TIMEOUT_SEC = 10;
-    static final int POLL_TIME_MSEC = 100;
-    static final String REC_FILENAME = "myRecordingEdge";
-    static final String REC_EXT = ".webm";
+    static final Logger log = getLogger(lookup().lookupClass());
 
     WebDriver driver;
-    File targetFolder;
     WebDriverManager wdm;
 
     @BeforeEach
     void setup() {
         wdm = WebDriverManager.edgedriver().watch();
         driver = wdm.create();
-        targetFolder = new File(System.getProperty("user.home"), "Downloads");
+    }
+
+    @AfterEach
+    void teardown() {
+        driver.quit();
     }
 
     @Test
-    void test() throws InterruptedException {
+    void test() {
         driver.get(
                 "https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html");
 
-        wdm.startRecording(REC_FILENAME);
+        wdm.startRecording();
 
         // 1 + 3
         driver.findElement(By.xpath("//span[text()='1']")).click();
@@ -69,25 +71,10 @@ class RecordEdgeTest {
 
         wdm.stopRecording();
 
-        long timeoutMs = System.currentTimeMillis()
-                + TimeUnit.SECONDS.toMillis(REC_TIMEOUT_SEC);
+        Path recordingPath = wdm.getRecordingPath();
+        assertThat(recordingPath).exists();
 
-        File recFile;
-        do {
-            recFile = new File(targetFolder, REC_FILENAME + REC_EXT);
-            if (System.currentTimeMillis() > timeoutMs) {
-                fail("Timeout of " + REC_TIMEOUT_SEC
-                        + " seconds waiting for recording " + recFile);
-                break;
-            }
-            Thread.sleep(POLL_TIME_MSEC);
-
-        } while (!recFile.exists());
-    }
-
-    @AfterEach
-    void teardown() {
-        driver.quit();
+        log.debug("Recording available at {}", recordingPath);
     }
 
 }
