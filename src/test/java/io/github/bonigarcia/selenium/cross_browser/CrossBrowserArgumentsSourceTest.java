@@ -26,7 +26,7 @@ import org.junit.jupiter.params.provider.ArgumentsSource;
 import org.openqa.selenium.WebDriver;
 
 @ParameterizedClass
-@ArgumentsSource(CrossBrowserDriverProvider.class)
+@ArgumentsSource(CrossBrowserProvider.class)
 class CrossBrowserArgumentsSourceTest {
 
     @Parameter
