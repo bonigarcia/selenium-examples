@@ -1,0 +1,12 @@
+{
+  "AccountPage": {
+    "accountNameInput": {
+      "type": "css",
+      "value": "#input-0"
+    },
+    "accountDescriptionInput": {
+      "type": "css",
+      "value": "#input-1"
+    }
+  }
+}
