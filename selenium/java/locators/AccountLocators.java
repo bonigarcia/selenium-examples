@@ -1,7 +1,7 @@
+// NEW COMMENT
 package locators;
 
 import org.openqa.selenium.By;
-
 public class AccountLocators {
     // App Launcher and Navigation
     public static final By APP_LAUNCHER_BUTTON = By.cssSelector("div.slds-icon-waffle"); // Reusing existing elem_xycr1r
