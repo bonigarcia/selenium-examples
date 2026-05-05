@@ -5,84 +5,84 @@
       "value": "//mark[text()='Accounts']/ancestor::a",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-04"
+      "lastUsed": "2026-05-05"
     },
     "elem_4yem9e": {
       "type": "xpath",
       "value": "//h1[contains(@class, 'slds-page-header__title",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-04"
+      "lastUsed": "2026-05-05"
     },
     "edit": {
       "type": "xpath",
       "value": "//button[@name='Edit']",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-04"
+      "lastUsed": "2026-05-05"
     },
     "elem_q06wto": {
       "type": "xpath",
       "value": "//a[@title='\" + accountName + \"']",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-04"
+      "lastUsed": "2026-05-05"
     },
     "elem_xycr1r": {
       "type": "css",
       "value": "div.slds-icon-waffle",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-04"
+      "lastUsed": "2026-05-05"
     },
     "elem_iutqq6": {
       "type": "css",
       "value": "input.slds-input[placeholder='Search apps and items...']",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-04"
+      "lastUsed": "2026-05-05"
     },
     "elem_sdqp9b": {
       "type": "css",
       "value": "input[placeholder='Search Salesforce']",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-04"
+      "lastUsed": "2026-05-05"
     },
     "tCVAmountc": {
       "type": "css",
       "value": "lightning-output-field[field-name='TCV_Amount__c'] lightning-formatted-text",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-04"
+      "lastUsed": "2026-05-05"
     },
     "elem_sr0vne": {
       "type": "css",
       "value": "div.slds-modal__header h2.slds-modal__title",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-04"
+      "lastUsed": "2026-05-05"
     },
     "saveEdit": {
       "type": "css",
       "value": "button[name='SaveEdit']",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-04"
+      "lastUsed": "2026-05-05"
     },
     "cancelEdit": {
       "type": "css",
       "value": "button[name='CancelEdit']",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-04"
+      "lastUsed": "2026-05-05"
     },
     "elem_nwl8cj": {
       "type": "css",
       "value": "div.forceVisualMessageList ul li",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-04"
+      "lastUsed": "2026-05-05"
     }
   }
 }
