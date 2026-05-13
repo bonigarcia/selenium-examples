@@ -106,6 +106,10 @@
     "elem_r8l8i6": {
       "type": "css",
       "value": "div.forceToastMessage"
+    },
+    "elem_b3fkf4": {
+      "type": "xpath",
+      "value": "//a[@title='%s']"
     }
   }
 }
