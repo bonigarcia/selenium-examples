@@ -98,6 +98,14 @@
       "type": "css",
       "value": "lightning-lookup[field-name='OwnerId'] input",
       "lastUsed": "2026-05-06"
+    },
+    "elem_q02wax": {
+      "type": "xpath",
+      "value": "//a[@title='\" + \"accountNamePlaceholder\" + \"']"
+    },
+    "elem_r8l8i6": {
+      "type": "css",
+      "value": "div.forceToastMessage"
     }
   }
 }
