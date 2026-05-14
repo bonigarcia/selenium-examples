@@ -1,0 +1,16 @@
+{
+  "AccountPage": {
+    "globalSearchInput": {
+      "type": "css",
+      "value": "input.search-input"
+    },
+    "recordPageHeader": {
+      "type": "css",
+      "value": ".oneContent, .slds-page-header__title"
+    },
+    "successToast": {
+      "type": "css",
+      "value": "div.forceToastMessage"
+    }
+  }
+}
