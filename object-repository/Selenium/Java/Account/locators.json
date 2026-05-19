@@ -5,7 +5,7 @@
       "value": "//mark[text()='Accounts']/ancestor::a",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-05"
+      "lastUsed": "2026-05-19"
     },
     "elem_4yem9e": {
       "type": "xpath",
@@ -19,7 +19,7 @@
       "value": "//button[@name='Edit']",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-05"
+      "lastUsed": "2026-05-19"
     },
     "elem_q06wto": {
       "type": "xpath",
@@ -33,28 +33,28 @@
       "value": "div.slds-icon-waffle",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-05"
+      "lastUsed": "2026-05-19"
     },
     "elem_iutqq6": {
       "type": "css",
       "value": "input.slds-input[placeholder='Search apps and items...']",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-05"
+      "lastUsed": "2026-05-19"
     },
     "elem_sdqp9b": {
       "type": "css",
       "value": "input[placeholder='Search Salesforce']",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-05"
+      "lastUsed": "2026-05-19"
     },
     "tCVAmountc": {
       "type": "css",
       "value": "lightning-output-field[field-name='TCV_Amount__c'] lightning-formatted-text",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-05"
+      "lastUsed": "2026-05-19"
     },
     "elem_sr0vne": {
       "type": "css",
@@ -68,14 +68,14 @@
       "value": "button[name='SaveEdit']",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-05"
+      "lastUsed": "2026-05-19"
     },
     "cancelEdit": {
       "type": "css",
       "value": "button[name='CancelEdit']",
       "source": "TC002",
       "firstSeen": "2026-05-04",
-      "lastUsed": "2026-05-05"
+      "lastUsed": "2026-05-19"
     },
     "elem_nwl8cj": {
       "type": "css",
@@ -105,11 +105,13 @@
     },
     "elem_r8l8i6": {
       "type": "css",
-      "value": "div.forceToastMessage"
+      "value": "div.forceToastMessage",
+      "lastUsed": "2026-05-19"
     },
     "elem_b3fkf4": {
       "type": "xpath",
-      "value": "//a[@title='%s']"
+      "value": "//a[@title='%s']",
+      "lastUsed": "2026-05-19"
     }
   }
 }

@@ -1,6 +1,6 @@
-// ADDED NEW COMMENT
-
 package pages;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import locators.AccountLocators;
 
@@ -10,73 +10,48 @@ public class AccountPage extends BasePage {
         super(driver);
     }
 
-    /**
-     * Navigates to the Accounts tab using the App Launcher.
-     */
     public void navigateToAccountsTab() {
         waitForClickable(AccountLocators.APP_LAUNCHER_BUTTON).click();
-        fill(AccountLocators.APP_LAUNCHER_SEARCH_INPUT, "Accounts");
-        waitForClickable(AccountLocators.ACCOUNTS_APP_LAUNCHER_ITEM).click();
-        waitForElement(AccountLocators.GLOBAL_SEARCH_INPUT); // Wait for Accounts list view to load
+        waitForElement(AccountLocators.SEARCH_APPS_INPUT).sendKeys("Accounts");
+        waitForClickable(AccountLocators.ACCOUNTS_NAV_ITEM).click();
+        waitForSpinner();
     }
 
-    /**
-     * Searches for an account using the global search bar and clicks on the result.
-     * @param accountName The name of the account to search for.
-     */
     public void searchAndSelectAccount(String accountName) {
-        waitForClickable(AccountLocators.GLOBAL_SEARCH_INPUT).sendKeys(accountName);
-        waitForElement(AccountLocators.getAccountSearchResultLink(accountName)).click();
-        waitForElement(AccountLocators.ACCOUNT_DETAIL_PAGE_HEADER_TITLE); // Wait for account detail page to load
+        waitForElement(AccountLocators.GLOBAL_SEARCH_INPUT).sendKeys(accountName);
+        // Press Enter or wait for search results to appear
+        // In Salesforce Lightning, often results appear dynamically
+        // We'll directly click the link once it appears
+        By accountLink = By.xpath(String.format(AccountLocators.ACCOUNT_LINK_BY_TITLE_FORMAT, accountName));
+        waitForClickable(accountLink).click();
+        waitForSpinner();
     }
 
-    /**
-     * Retrieves the displayed Total Contract Value (TCV) amount from the Account detail page.
-     * @return The TCV amount as a String.
-     */
-    public String getTCVAmountDisplayed() {
-        waitForElement(AccountLocators.TCV_AMOUNT_DISPLAY_FIELD);
-        return getText(AccountLocators.TCV_AMOUNT_DISPLAY_FIELD);
+    public String getTCVAmount() {
+        return getText(AccountLocators.TCV_AMOUNT_DISPLAY);
     }
 
-    /**
-     * Clicks the 'Edit' button on the Account highlight panel to open the edit modal.
-     */
+    public boolean isTCVAmountFieldVisible() {
+        return isElementVisible(AccountLocators.TCV_AMOUNT_DISPLAY);
+    }
+
     public void clickEditButton() {
-        waitForClickable(AccountLocators.EDIT_BUTTON_HIGHLIGHT_PANEL).click();
-        waitForElement(AccountLocators.EDIT_MODAL_TITLE); // Wait for edit modal to open
+        waitForClickable(AccountLocators.EDIT_BUTTON).click();
+        waitForSpinner();
     }
 
-    /**
-     * Enters a new value into the TCV Amount field within the edit modal.
-     * @param newAmount The new TCV amount to enter.
-     */
-    public void editTCVAmount(String newAmount) {
-        waitForElement(AccountLocators.TCV_AMOUNT_INPUT_EDIT_MODAL);
-        fill(AccountLocators.TCV_AMOUNT_INPUT_EDIT_MODAL, newAmount);
+    public void enterTCVAmount(String amount) {
+        // Clear the field first before entering new value
+        fill(AccountLocators.TCV_AMOUNT_INPUT_EDIT, amount);
     }
 
-    /**
-     * Clicks the 'Save' button in the edit modal.
-     */
-    public void clickSaveButton() {
-        click(AccountLocators.SAVE_EDIT_BUTTON);
+    public void saveAccountEdit() {
+        waitForClickable(AccountLocators.SAVE_EDIT_BUTTON).click();
+        waitForSpinner();
     }
 
-    /**
-     * Retrieves the text of the validation error message displayed in the modal.
-     * @return The validation error message as a String.
-     */
-    public String getValidationErrorMessage() {
-        waitForElement(AccountLocators.VALIDATION_ERROR_MESSAGE_IN_MODAL);
-        return getText(AccountLocators.VALIDATION_ERROR_MESSAGE_IN_MODAL);
-    }
-
-    /**
-     * Clicks the 'Cancel' button in the edit modal to dismiss it.
-     */
-    public void clickCancelEditButton() {
-        click(AccountLocators.CANCEL_EDIT_BUTTON);
-        waitForElementHidden(AccountLocators.EDIT_MODAL_TITLE); // Wait for modal to close
+    public String getSuccessMessage() {
+        waitForElement(AccountLocators.SUCCESS_TOAST_MESSAGE);
+        return getText(AccountLocators.SUCCESS_TOAST_MESSAGE);
     }
 }

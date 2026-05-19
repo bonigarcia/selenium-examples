@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM
+"https://testng.org/testng-1.0.dtd">
+
+<suite
+        name="Xenon Automation Suite"
+        parallel="false"
+        thread-count="1"
+        verbose="1">
+
+    <!-- Global Parameters -->
+
+    <parameter
+            name="browser"
+            value="chrome"/>
+
+    <parameter
+            name="baseUrl"
+            value="https://example.com"/>
+
+    <parameter
+            name="timeout"
+            value="20"/>
+
+    <!-- Main Test -->
+
+    <test
+            name="Generated Automation Tests">
+
+        <classes>
+
+            <!-- Generated Test Classes -->
+
+            <class
+                    name="tests.GeneratedTest"/>
+
+        </classes>
+
+    </test>
+
+</suite>
